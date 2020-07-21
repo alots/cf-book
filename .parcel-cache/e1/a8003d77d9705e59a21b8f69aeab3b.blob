@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> crowdfunded book publishing </title>
+</head>
+<body>
+  <div id="root"> Hellow, world!</div>
+  <script src="/cf-book.6ce3feb8.js"></script>
+</body>
+</html>
