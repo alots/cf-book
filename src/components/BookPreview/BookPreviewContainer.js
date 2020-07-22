@@ -10,22 +10,24 @@ const BookPreviewContainer = ({book}) => {
     <div className="container">
       <div className="row">
         <div className="d-flex col-lg">
-          <AuthorСard author={book.author} /> 
+          <AuthorСard author={book.author} title={book.title} /> 
         </div>
         <div className="col-lg">   
           <BookCard book={book} />
         </div>
-        <div className="col-lg">
+        <div className="col-lg-3">
           <BookPrice minPrice={book.minPrice} suggestedPrice={book.suggestedPrice} />
           <AddBook />
         </div>
       </div>
-      <div className="alert alert-success">
+      <div className="book-about">
 
-          <div> About the book: </div>
-          <BookDescription description={book.description} />
-       
-        
+          <div className="book-about-title">
+             About the book: 
+          </div>
+          <div className="book-about-text">
+            <BookDescription description={book.description} />
+          </div>
       </div>
     </div>
   );

@@ -1,8 +1,5 @@
 import React from 'react'
 
-
-
-
 const AuthorAvatar = ({avatar}) => {
   return (
     <div className="author-avatar">
@@ -10,9 +7,5 @@ const AuthorAvatar = ({avatar}) => {
     </div>
   );
 }
-
-
-
-
 
 export default AuthorAvatar

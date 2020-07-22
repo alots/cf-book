@@ -3,7 +3,7 @@ import React from 'react'
 
 const AddBook = () => {
   return (
-    <button>
+    <button type="button" className="btn btn-outline-dark">
       Подписаться
     </button>
   );

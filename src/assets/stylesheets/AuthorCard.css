@@ -3,3 +3,22 @@
   flex-direction: column;
   align-self: center;
 }
+.author-title-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+}
+.author-card div {
+  padding: 1em;
+}
+.author-card-title {
+  font-size: 32px;
+  
+}
+.author-information {
+  opacity: .7;
+}
+.author-name {
+  align-self: flex-end;
+  opacity: .7;
+}

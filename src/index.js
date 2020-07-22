@@ -8,7 +8,7 @@ import '~/node_modules/bootstrap/dist/js/bootstrap.min.js';
 //import '~/node_modules/bootstrap-icons/bootstrap-icons.svg';
 
 const book = {
-  name: "Functional Programming in C#",
+  title: "Functional Programming in C#",
   description: "This book goes beyond the introductory ideas of functional programming, while progressively building on practical examples in a comprehensive manner. Each example is accompanied by online autonomous .NET Fiddle This book goes beyond the introductory ideas of functional programming, while progressively building on practical examples in a comprehensive manner. Each example is accompanied by online autonomous .NET Fiddle",
   numberOfPages: "300",
   language: "english",
