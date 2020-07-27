@@ -1,0 +1,24 @@
+.author-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-self: center;
+}
+.author-title-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+}
+
+.author-card-title {
+  font-size: 32px;
+  
+}
+.author-information {
+  opacity: .7;
+}
+.author-name {
+  opacity: .7;
+  padding-left: 1em;
+}
