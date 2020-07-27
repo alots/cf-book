@@ -1,11 +1,12 @@
 import React from 'react'
+import { Button } from 'reactstrap'
 
 
 const AddBook = () => {
   return (
-    <button type="button" className="btn btn-outline-dark">
+    <Button variant="light">
       Подписаться
-    </button>
+    </Button>
   );
 }
 

@@ -1,16 +1,16 @@
 .author-card {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   align-self: center;
 }
 .author-title-info {
   display: flex;
   flex-direction: row;
   justify-content: start;
+  align-items: center;
 }
-.author-card div {
-  padding: 1em;
-}
+
 .author-card-title {
   font-size: 32px;
   
@@ -19,6 +19,6 @@
   opacity: .7;
 }
 .author-name {
-  align-self: flex-end;
   opacity: .7;
+  padding-left: 1em;
 }
