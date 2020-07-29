@@ -5,8 +5,7 @@ import AuthorName from './AuthorName'
 import BookInfo from './BookInfo'
 import BookName from './BookName'
 
-const AuthorСard = ({authors, title, shortDescription}) => {
-    const [showAuthors, setShowAuthors] = useState(false);
+const AuthorСard = ({authors, title, shortDescription, showAuthors, showClick}) => {
     return (
       <div className="author-card">
         <div className="author-card-title">
@@ -15,7 +14,7 @@ const AuthorСard = ({authors, title, shortDescription}) => {
         <div className="author-title-info">
           <AuthorAvatar authors={authors} showAuthors={showAuthors}/>
           <AuthorName authors={authors} showAuthors={showAuthors}/> 
-          <Button color="link" onClick={() => setShowAuthors(!showAuthors)}> {showAuthors ? `Показать всех авторов (${authors.length}) ` : `Скрыть`} </Button>
+          <Button color="link" onClick={showClick}> {showAuthors ? `Показать всех авторов (${authors.length}) ` : `Скрыть`} </Button>
         </div>
         <div className="author-information">
            <BookInfo shortDescription={shortDescription}/>  

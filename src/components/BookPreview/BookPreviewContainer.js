@@ -10,15 +10,19 @@ const COUNT_SUBSCRIBERS_POPULAR = 5;
 
 const BookPreviewContainer = ({book}) => {
   const [countSubscribers, setCountSubscribers] = useState(0);
+  const [showAuthors, setShowAuthors] = useState(false);
   const handleClick = () => {
     setCountSubscribers(countSubscribers + 1);
+  }
+  const showClick = () => {
+    setShowAuthors(!showAuthors)
   }
 
   return (
     <Container>
       <Row>
         <Col className="author-card">
-          <AuthorСard authors={book.authors} title={book.title} shortDescription={book.shortDescription}/> 
+          <AuthorСard authors={book.authors} title={book.title} shortDescription={book.shortDescription} showAuthors={showAuthors} showClick={showClick}/> 
         </Col>
         <Col className="book-cover">   
           <BookCard book={book} />
