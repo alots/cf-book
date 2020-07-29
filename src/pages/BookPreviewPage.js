@@ -1,11 +1,18 @@
 import React from 'react';
 import BookPreviewContainer from '../components/BookPreview/BookPreviewContainer'
+import HeaderMain from '../components/Header/HeaderMain';
 
 
 
 const BookPreviewPage = ( {book} ) => {
   return (
-    <BookPreviewContainer book={book} />
+    <>
+      <HeaderMain />
+      <BookPreviewContainer book={book} />
+      <footer className="footer">
+       &copy; {new Date().getFullYear()}, Thinknetica
+      </footer>
+    </>
   );
 }
 

@@ -1,0 +1,10 @@
+.header-main {
+  min-height: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25em;
+  font-weight: bol;
+  color: white;
+  background-color: rgba(41, 39, 39, 1);
+}

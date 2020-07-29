@@ -1,12 +1,37 @@
-import React from 'react'
-import { Button } from 'reactstrap'
+import React,{useState} from 'react'
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
 
 
-const AddBook = () => {
+const AddBook = ({handleClick}) => {
+ /*  const {
+    buttonLabel,
+    className
+  } = props; */
+  const [modal, setModal] = useState(false);
+
+  const toggle = () => setModal(!modal);
+
+  const addClick = (e) => {
+    const firstHandler = toggle;
+    const secondHandler = handleClick;
+    firstHandler(e);
+    secondHandler(e);
+  }
+
   return (
-    <Button variant="light">
-      Подписаться
-    </Button>
+    <div>
+      <Button color="danger" onClick={toggle}> Подписаться </Button>
+      <Modal isOpen={modal} toggle={toggle} >
+        <ModalHeader toggle={toggle}> Условия подписки </ModalHeader>
+        <ModalBody>
+        В зависимости от суммы перевода, вы будете поощрены  личной подписью автора, мерчендайзом (футболками, кружками), упоминанием в благодарностяхю
+        </ModalBody>
+        <ModalFooter>
+          <Button  color="primary" onClick={addClick} > Подписаться </Button>{' '}
+          <Button color="secondary" onClick={toggle}> Закрыть </Button>
+        </ModalFooter>
+      </Modal>
+    </div>
   );
 }
 

@@ -1,4 +1,7 @@
+@import './general.css';
 @import './stylesheets/AuthorAvatar.css';
 @import './stylesheets/AuthorCard.css';
 @import './stylesheets/BookCard.css';
 @import './stylesheets/BookPrice.css';
+@import './stylesheets/Header.css';
+@import './stylesheets/Footer.css';

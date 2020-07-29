@@ -1,21 +1,24 @@
-import React from 'react';
+import React, {useState} from 'react';
+import { Button } from 'reactstrap';
 import AuthorAvatar from './AuthorAvatar'
 import AuthorName from './AuthorName'
-import AuthorInfo from './AuthorInfo'
+import BookInfo from './BookInfo'
 import BookName from './BookName'
 
-const AuthorСard = ({author, title}) => {
+const AuthorСard = ({authors, title, shortDescription}) => {
+    const [showAuthors, setShowAuthors] = useState(false);
     return (
       <div className="author-card">
         <div className="author-card-title">
           <BookName title={title} />
         </div>
         <div className="author-title-info">
-          <AuthorAvatar avatar={author.avatar}/>
-          <AuthorName name={author.name}/>
+          <AuthorAvatar authors={authors} showAuthors={showAuthors}/>
+          <AuthorName authors={authors} showAuthors={showAuthors}/> 
+          <Button color="link" onClick={() => setShowAuthors(!showAuthors)}> {showAuthors ? `Показать всех авторов (${authors.length}) ` : `Скрыть`} </Button>
         </div>
         <div className="author-information">
-          <AuthorInfo authorInformation={author.authorInformation}/>
+           <BookInfo shortDescription={shortDescription}/>  
         </div>
       </div>   
     );
