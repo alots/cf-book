@@ -1,6 +1,6 @@
 import React from 'react';
-import BookPreviewContainer from '../components/BookPreview/BookPreviewContainer'
-import HeaderMain from '../components/Header/HeaderMain';
+import BookPreviewContainer from '../BookPreview/BookPreviewContainer'
+import HeaderMain from '../Header/HeaderMain';
 
 
 

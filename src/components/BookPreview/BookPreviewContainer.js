@@ -5,24 +5,18 @@ import BookCard from './BookCard';
 import AddBook from './AddBook';
 import BookPrice from './BookPrice';
 import BookDescription from './BookDescription';
-
-const COUNT_SUBSCRIBERS_POPULAR = 5;
+import settings from '~/src/components/config/settings.js';
 
 const BookPreviewContainer = ({book}) => {
   const [countSubscribers, setCountSubscribers] = useState(0);
-  const [showAuthors, setShowAuthors] = useState(false);
   const handleClick = () => {
     setCountSubscribers(countSubscribers + 1);
   }
-  const showClick = () => {
-    setShowAuthors(!showAuthors)
-  }
-
   return (
     <Container>
       <Row>
         <Col className="author-card">
-          <AuthorСard authors={book.authors} title={book.title} shortDescription={book.shortDescription} showAuthors={showAuthors} showClick={showClick}/> 
+          <AuthorСard authors={book.authors} title={book.title} shortDescription={book.shortDescription} /> 
         </Col>
         <Col className="book-cover">   
           <BookCard book={book} />
@@ -31,7 +25,7 @@ const BookPreviewContainer = ({book}) => {
           <BookPrice minPrice={book.minPrice} suggestedPrice={book.suggestedPrice} />
           <AddBook handleClick={handleClick}/>
           {
-            (countSubscribers > COUNT_SUBSCRIBERS_POPULAR) ? <div className="subscribers"> Книга очень популярна({countSubscribers} подписчиков) </div> : null
+            (countSubscribers > settings.popularBookSubscribersCount) ? <div className="subscribers"> Книга очень популярна({countSubscribers} подписчиков) </div> : null
 
           }
         </Col>

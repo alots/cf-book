@@ -1,5 +1,5 @@
 import React from 'react'
-import BookPreviewPage from './pages/BookPreviewPage';
+import BookPreviewPage from './components/pages/BookPreviewPage';
 
 const App = ({books}) => {
     return (
