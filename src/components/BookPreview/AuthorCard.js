@@ -11,10 +11,10 @@ const AuthorСard = ({authors, title, shortDescription}) => {
   const showClick = () => {
     setShowAuthors(!showAuthors)
   }
-  const authorVisibleCount = showAuthors ? authors.length : settings.visibleAuthorsCount;
-  const visibleAuthors = authors.slice(0, authorVisibleCount);
-
-    return (
+  const visibleAuthorsCount = showAuthors ?  settings.visibleAuthorsCount : authors.length ;
+  const visibleAuthors = authors.slice(0, visibleAuthorsCount);
+  const showExpandButton = authors.length > settings.visibleAuthorsCount
+  return (
       <div className="author-card">
         <div className="author-card-title">
           <BookName title={title} />
@@ -22,7 +22,12 @@ const AuthorСard = ({authors, title, shortDescription}) => {
         <div className="author-title-info">
           <AuthorAvatar visibleAuthors={visibleAuthors}/>
           <AuthorName visibleAuthors={visibleAuthors}/> 
-          <Button color="link" onClick={showClick}> {showAuthors ?  `Скрыть` : `Показать всех авторов (${authors.length}) `} </Button>
+          {
+            (showExpandButton) && 
+              <Button color="link" onClick={showClick}> 
+                {showAuthors ?    `Скрыть` : `Показать всех авторов (${authors.length}) `}  
+              </Button>
+          }     
         </div>
         <div className="author-information">
            <BookInfo shortDescription={shortDescription}/>  
