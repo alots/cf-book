@@ -11,7 +11,7 @@ const AuthorСard = ({authors, title, shortDescription}) => {
   const showClick = () => {
     setShowAuthors(!showAuthors)
   }
-  const visibleAuthorsCount = showAuthors ?  settings.visibleAuthorsCount : authors.length ;
+  const visibleAuthorsCount = showAuthors ?   authors.length : settings.visibleAuthorsCount ;
   const visibleAuthors = authors.slice(0, visibleAuthorsCount);
   const showExpandButton = authors.length > settings.visibleAuthorsCount
   return (
