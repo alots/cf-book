@@ -2,8 +2,8 @@ import React from 'react';
 
 const BookCover = ({cover}) => {
   return (
-    <div>
-      <img src={cover} />
+    <div className="book-cover">
+      <img className="book-cover-image" src={cover} />
     </div>
   );
 }

@@ -6,12 +6,8 @@ import BookProgress from './BookProgress'
 const BookCard = ({book}) => {
   return (
     <div className="book-info">
-      <div>
-        <BookCover cover={book.cover} />
-      </div>
-      <div>
-        <BookProgress progressInPercent={book.progressInPercent} />
-      </div>
+      <BookCover cover={book.cover} />
+      <BookProgress progressInPercent={book.progressInPercent} />
     </div>
   );
 }
