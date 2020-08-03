@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 
 
 const AuthorAvatar = ({visibleAuthors}) => {
@@ -14,5 +15,9 @@ const AuthorAvatar = ({visibleAuthors}) => {
     </div>
   );
 }
+
+AuthorAvatar.propTypes = {
+  visibleAuthors: PropTypes.arrayOf(PropTypes.object).isRequired
+};
 
 export default AuthorAvatar

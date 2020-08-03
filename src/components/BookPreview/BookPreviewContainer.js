@@ -1,11 +1,15 @@
 import React,{useState} from 'react';
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col, Button } from 'reactstrap';
 import AuthorСard from './AuthorCard';
 import BookCard from './BookCard';
 import AddBook from './AddBook';
 import BookPrice from './BookPrice';
 import BookDescription from './BookDescription';
 import settings from '~/src/components/config/settings.js';
+import PropTypes from 'prop-types';
+import { Route, Switch, Redirect, withRouter, Link } from "react-router-dom"
+import UserQuestionPage from '../pages/UserQuestionPage'
+
 
 const BookPreviewContainer = ({book}) => {
   const [countSubscribers, setCountSubscribers] = useState(0);
@@ -14,7 +18,7 @@ const BookPreviewContainer = ({book}) => {
   }
   return (
     <Container>
-      <Row>
+      <Row className="row-1">
         <Col className="author-card">
           <AuthorСard authors={book.authors} title={book.title} shortDescription={book.shortDescription} /> 
         </Col>
@@ -38,10 +42,20 @@ const BookPreviewContainer = ({book}) => {
           <div className="book-about-text">
             <BookDescription description={book.description} />
           </div>
+          <Link to="/userquestion">
+            <div>
+              <label>Обратная связь: </label>
+              <Button color="link">Задать вопрос</Button>
+            </div>
+          </Link>
         </Col>
       </Row>
     </Container>
   );
 }
+
+BookPreviewContainer.propTypes = {
+  book: PropTypes.object.isRequired
+};
 
 export default BookPreviewContainer

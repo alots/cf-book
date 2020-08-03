@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const BookCover = ({cover}) => {
   return (
@@ -7,5 +8,9 @@ const BookCover = ({cover}) => {
     </div>
   );
 }
+
+BookCover.propTypes = {
+  cover: PropTypes.string.isRequired
+};
 
 export default BookCover

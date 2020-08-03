@@ -7,7 +7,7 @@
     "language": "english",
     "progressInPercent": 100,
     "cover": "https://d2sofvawe08yqg.cloudfront.net/vuejs2-russian/hero?1549499096",
-    "minPrice": "8.99",
+    "minPrice": 8.99,
     "suggestedPrice": 15.99,
     "collectedPrice": 100,
     "expectedPrice": 200,

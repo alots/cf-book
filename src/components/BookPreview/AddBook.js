@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
-
+import PropTypes from 'prop-types';
 
 const AddBook = ({handleClick}) => {
  /*  const {
@@ -34,5 +34,9 @@ const AddBook = ({handleClick}) => {
     </div>
   );
 }
+
+AddBook.propTypes = {
+  handleClick: PropTypes.func.isRequired
+};
 
 export default AddBook
