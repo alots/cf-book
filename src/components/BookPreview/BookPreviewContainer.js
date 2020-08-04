@@ -5,10 +5,10 @@ import BookCard from './BookCard';
 import AddBook from './AddBook';
 import BookPrice from './BookPrice';
 import BookDescription from './BookDescription';
-import settings from '~/src/components/config/settings.js';
+import settings from '~/src/config/settings.js';
 import PropTypes from 'prop-types';
-import { Route, Switch, Redirect, withRouter, Link } from "react-router-dom"
-import UserQuestionPage from '../pages/UserQuestionPage'
+import { Link } from "react-router-dom"
+import routes from '~/src/config/routes'
 
 
 const BookPreviewContainer = ({book}) => {
@@ -42,7 +42,7 @@ const BookPreviewContainer = ({book}) => {
           <div className="book-about-text">
             <BookDescription description={book.description} />
           </div>
-          <Link to="/userquestion">
+          <Link to={routes.userQuestion()}>
             <div>
               <label>Обратная связь: </label>
               <Button color="link">Задать вопрос</Button>

@@ -4,10 +4,10 @@ import books from '~/src/books.json'
 
 
 
-const BookPreviewPage = () => {
+const BookPreviewPage = ({book}) => {
   return (
     <>
-      <BookPreviewContainer book={books[0]}/> 
+      <BookPreviewContainer book={book}/> 
     </>
   );
 }

@@ -1,12 +1,16 @@
 import ReactDOM from 'react-dom';
 import React from 'react'
-import App from './App';
 import './assets/application.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import books from './books.json';
 import AuthContext from './components/UserPreview/AuthContext'
-import { Router } from "react-router-dom"
+import AppLayout from './components/layouts/AppLayout'
+import { Switch, Redirect, Route,Router} from "react-router-dom"
 import {createBrowserHistory} from 'history'
+import routes from './config/routes'
+
+import BookPreviewPage from './components/pages/BookPreviewPage'
+import UserQuestionPage from './components/pages/UserQuestionPage'
 
 const history = createBrowserHistory()
 const user = {
@@ -19,7 +23,19 @@ const user = {
 ReactDOM.render(
   <Router history={history}>
     <AuthContext.Provider value={{isAuthenticated: true, currentUser: user}}>
-      <App book={books[0]}/>
+    <AppLayout >
+        <Switch>
+          <Route path={routes.bookPreview()}>
+            <BookPreviewPage book={books[0]} />
+          </Route>
+          <Route path={routes.userQuestion()}>
+            <UserQuestionPage />
+          </Route>
+          <Route path="/">
+            <Redirect to={routes.bookPreview()} />
+          </Route>
+        </Switch>
+      </AppLayout>
     </AuthContext.Provider>
   </Router>,
   document.getElementById('root')

@@ -1,5 +1,4 @@
 import React from 'react'
-import BookName from './BookName'
 import BookCover from './BookCover'
 import BookProgress from './BookProgress'
 import PropTypes from 'prop-types';

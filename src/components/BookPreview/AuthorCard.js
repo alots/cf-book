@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import { Button } from 'reactstrap';
-import settings from '~/src/components/config/settings.js';
+import settings from '~/src/config/settings.js';
 import AuthorAvatar from './AuthorAvatar'
 import AuthorName from './AuthorName'
 import BookInfo from './BookInfo'

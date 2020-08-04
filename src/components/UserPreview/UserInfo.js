@@ -11,7 +11,6 @@ const UserInfo = () => (
                 {user.currentUser.firstName}
               </div>
             </div> 
-            /* console.log(currentUser) */
           )
         }
       </AuthContext.Consumer>  
