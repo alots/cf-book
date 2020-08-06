@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 
 const BookPrice = ({minPrice, suggestedPrice}) => {
   return (
@@ -15,5 +15,10 @@ const BookPrice = ({minPrice, suggestedPrice}) => {
     </div>
   );
 }
+
+BookPrice.propTypes = {
+  minPrice: PropTypes.number.isRequired,
+  suggestedPrice: PropTypes.number.isRequired
+};
 
 export default BookPrice

@@ -1,17 +1,13 @@
 import React from 'react';
 import BookPreviewContainer from '../BookPreview/BookPreviewContainer'
-import HeaderMain from '../Header/HeaderMain';
+import books from '~/src/books.json'
 
 
 
-const BookPreviewPage = ( {book} ) => {
+const BookPreviewPage = ({book}) => {
   return (
     <>
-      <HeaderMain />
-      <BookPreviewContainer book={book} />
-      <footer className="footer">
-       &copy; {new Date().getFullYear()}, Thinknetica
-      </footer>
+      <BookPreviewContainer book={book}/> 
     </>
   );
 }

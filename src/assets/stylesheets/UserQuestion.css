@@ -1,0 +1,7 @@
+.form-text {
+  color: white;
+}.question-form {
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.205);
+  border-radius: 10px;
+}

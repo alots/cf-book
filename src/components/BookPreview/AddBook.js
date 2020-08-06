@@ -1,12 +1,9 @@
 import React,{useState} from 'react'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
-
+import PropTypes from 'prop-types';
 
 const AddBook = ({handleClick}) => {
- /*  const {
-    buttonLabel,
-    className
-  } = props; */
+  
   const [modal, setModal] = useState(false);
 
   const toggle = () => setModal(!modal);
@@ -34,5 +31,9 @@ const AddBook = ({handleClick}) => {
     </div>
   );
 }
+
+AddBook.propTypes = {
+  handleClick: PropTypes.func.isRequired
+};
 
 export default AddBook

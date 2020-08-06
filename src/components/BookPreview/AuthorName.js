@@ -1,5 +1,5 @@
 import React from 'react'
-
+import PropTypes from 'prop-types';
 
 const AuthorName = ({visibleAuthors}) => {
   const delimiter = ', ';
@@ -8,7 +8,8 @@ const AuthorName = ({visibleAuthors}) => {
       {
           visibleAuthors.map((author, idx) => (
             <div className="author-name" key={author.ID} >
-                {author.name} {(idx < visibleAuthors.length - 1) && delimiter}
+                {author.name} 
+                {(idx < visibleAuthors.length - 1) && delimiter}
             </div>
           ))
       } 
@@ -16,5 +17,9 @@ const AuthorName = ({visibleAuthors}) => {
 
   );
 }
+
+AuthorName.propTypes = {
+  visibleAuthors: PropTypes.arrayOf(PropTypes.object)
+};
 
 export default AuthorName

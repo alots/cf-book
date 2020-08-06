@@ -23,3 +23,8 @@
   display: flex;
   max-width: 350px;
 }
+.row-1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}

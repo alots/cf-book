@@ -1,8 +1,9 @@
-.author-card {
+.author-card.col {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-self: space-around;
+  max-width: 500px;
 }
 .author-title-info {
   display: flex;
@@ -24,6 +25,7 @@
 }
 .author-name {
   color: rgba(217,215,215,1);
+  margin-right: 4px;
 }
 .author-name-list {
   display: flex;

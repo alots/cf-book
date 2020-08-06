@@ -1,5 +1,5 @@
 import React from 'react'
-
+import PropTypes from 'prop-types';
 
 
 const BookInfo = ({shortDescription}) => {
@@ -9,5 +9,9 @@ const BookInfo = ({shortDescription}) => {
     </div>
   );
 }
+
+BookInfo.propTypes = {
+  shortDescription: PropTypes.string.isRequired
+};
 
 export default BookInfo

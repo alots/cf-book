@@ -1,7 +1,7 @@
 import React from 'react'
-import BookName from './BookName'
 import BookCover from './BookCover'
 import BookProgress from './BookProgress'
+import PropTypes from 'prop-types';
 
 const BookCard = ({book}) => {
   return (
@@ -11,5 +11,9 @@ const BookCard = ({book}) => {
     </div>
   );
 }
+
+BookCard.propTypes = {
+  book: PropTypes.object.isRequired
+};
 
 export default BookCard
