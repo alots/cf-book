@@ -41,6 +41,69 @@
         "avatar": "https://d39qdlcrvnra4b.cloudfront.net/avatars/1391374/original/36825394.jpeg?1536406484",
         "authorInformation": "Python/Javascript enthusiast"
       }
+    ],
+    "similarBooks": [
+      {
+        "id": 2,
+        "title": "C++17 in Detail",
+        "cover": "https://d2sofvawe08yqg.cloudfront.net/cpp17indetail/hero?1568300310",
+        "authors": [
+          {
+          "ID": 1,
+          "name": "Bartłomiej Filipek"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Learning Algorithms Through Programming and Puzzle Solving",
+        "cover": "https://d2sofvawe08yqg.cloudfront.net/algo/hero?1549499101",
+        "authors": [
+          {
+            "ID": 1,
+            "name": "Alexander S. Kulikov"
+          },
+          {
+            "ID": 2,
+            "name": "Pavel Pevzner"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Thinking Functionally in PHP",
+        "cover": "https://d2sofvawe08yqg.cloudfront.net/thinking-functionally-in-php/hero?1590795965",
+        "authors": [
+          {
+            "ID": 1,
+            "name": "Larry Garfield"
+          }
+        ] 
+      },
+      {
+        "id": 5,
+        "title": "Testing Spark Applications",
+        "cover": "https://d2sofvawe08yqg.cloudfront.net/testing-spark/hero?1585095735",
+        "authors": [
+          {
+            "ID": 1,
+            "name": "Matthew Powers"
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "title": "Curso de TDD",
+        "cover": "https://d2sofvawe08yqg.cloudfront.net/tddcourse/hero?1596559612",
+        "authors": [
+          {
+            "ID": 1,
+            "name": "Fran Iglesias"
+          }
+        ]
+      }
     ]
   }
+    
+  
 ]

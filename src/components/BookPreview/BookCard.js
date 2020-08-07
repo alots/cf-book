@@ -1,19 +1,23 @@
 import React from 'react'
-import BookCover from './BookCover'
-import BookProgress from './BookProgress'
 import PropTypes from 'prop-types';
+import {Card, CardImg, CardTitle, CardSubtitle, Button} from 'reactstrap'
 
-const BookCard = ({book}) => {
+const BookCard = ({book, changeSimilarBooks}) => {
   return (
-    <div className="book-info">
-      <BookCover cover={book.cover} />
-      <BookProgress progressInPercent={book.progressInPercent} />
-    </div>
+    <Card className="book-card">
+      <a className="close" onClick={changeSimilarBooks}/>
+      <img className="book-card-image"  src={book.cover} alt="Card image cap"/>
+      <div className="book-card-title"> {book.title} </div>
+        {
+          book.authors.map((author) =>
+            <a href="#" className="book-card-authors"> {author.name} </a> 
+          )
+        }
+      
+    </Card>
   );
 }
 
-BookCard.propTypes = {
-  book: PropTypes.object.isRequired
-};
+
 
 export default BookCard

@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 import { Container, Row, Col, Button } from 'reactstrap';
 import AuthorСard from './AuthorCard';
-import BookCard from './BookCard';
+import BookCover from './BookCover'
 import AddBook from './AddBook';
 import BookPrice from './BookPrice';
 import BookDescription from './BookDescription';
@@ -9,6 +9,7 @@ import settings from '~/src/config/settings.js';
 import PropTypes from 'prop-types';
 import { Link } from "react-router-dom"
 import routes from '~/src/config/routes'
+import SimilarBookList from './SimilarBookList'
 
 
 const BookPreviewContainer = ({book}) => {
@@ -23,7 +24,7 @@ const BookPreviewContainer = ({book}) => {
           <AuthorСard authors={book.authors} title={book.title} shortDescription={book.shortDescription} /> 
         </Col>
         <Col className="book-cover">   
-          <BookCard book={book} />
+          <BookCover book={book} />
         </Col>
         <Col className="book-price">
           <BookPrice minPrice={book.minPrice} suggestedPrice={book.suggestedPrice} />
@@ -49,6 +50,9 @@ const BookPreviewContainer = ({book}) => {
             </div>
           </Link>
         </Col>
+      </Row >
+      <Row className="similar">
+         <SimilarBookList similarBooks={book.similarBooks}/>
       </Row>
     </Container>
   );
