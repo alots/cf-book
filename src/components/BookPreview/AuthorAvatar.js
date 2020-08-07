@@ -7,7 +7,7 @@ const AuthorAvatar = ({visibleAuthors}) => {
     <div className="author-avatar-list">
       {
         visibleAuthors.map((author) => (
-          <div className="author-avatar" key={author.ID} >
+          <div className="author-avatar" key={author.id} >
               <img className="author-avatar" src={author.avatar} /> 
           </div>
         ))

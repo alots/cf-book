@@ -7,7 +7,7 @@ const AuthorName = ({visibleAuthors}) => {
     <div className="author-name-list">
       {
           visibleAuthors.map((author, idx) => (
-            <div className="author-name" key={author.ID} >
+            <div className="author-name" key={author.id} >
                 {author.name} 
                 {(idx < visibleAuthors.length - 1) && delimiter}
             </div>

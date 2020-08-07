@@ -1,6 +1,6 @@
 import React,{useState, useReducer} from 'react'
 import books from '~/src/books'
-import BookCard from './BookCard'
+import SimilarBookCard from './SimilarBookCard'
 import settings from '~/src/config/settings'
 
 
@@ -20,14 +20,13 @@ const SimilarBookList = ({similarBooks}) => {
         newVisibleBooks.push(newHiddenBooks.pop())
         setHiddenBooks(newHiddenBooks)
     }
-    setVisibleBooks(newVisibleBooks);
-   
+    setVisibleBooks(newVisibleBooks);  
   }
 
   return (   
     visibleBooks.map((book) => (
     <div key={book.id}>
-      <BookCard   book={book} changeSimilarBooks={() => changeSimilarBooks(book.id)}/>
+      <SimilarBookCard  book={book} changeSimilarBooks={() => changeSimilarBooks(book.id)}/>
     </div>
     )));
 }  
