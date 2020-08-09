@@ -7,7 +7,14 @@
     "start": "npm run test:eslint && parcel serve ./src/index.html",
     "build": "parcel build ./src/index.html",
     "test": "jest",
-    "test:eslint": "eslint src/ --ext .js --ext .jsx"
+    "test:eslint": "eslint src/ --ext .js --ext .jsx",
+    "prettier": "prettier --write \"src/**/*.js\""
+  },
+  "lint-staged": {
+    "*.{js,jsx,json,scss,css,md}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "author": "",
   "license": "ISC",
@@ -21,8 +28,11 @@
     "babel-plugin-syntax-jsx": "^6.18.0",
     "eslint": "^7.6.0",
     "eslint-plugin-react": "^7.20.5",
+    "husky": "^4.2.5",
     "jest": "^26.1.0",
+    "lint-staged": "^10.2.11",
     "parcel": "^2.0.0-beta.1",
+    "prettier": "^2.0.5",
     "resolve-url-loader": "^3.1.1",
     "tether": "^1.4.7"
   },

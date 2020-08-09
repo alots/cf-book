@@ -1,5 +1,8 @@
-import { createContext } from 'react'
+import { createContext } from "react";
 
-const AuthContext = createContext({ isAuthenticated: false, currentUser: null });
+const AuthContext = createContext({
+  isAuthenticated: false,
+  currentUser: null,
+});
 
 export default AuthContext;

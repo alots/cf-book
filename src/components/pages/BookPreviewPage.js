@@ -1,18 +1,17 @@
-import React from 'react';
-import BookPreviewContainer from '../BookPreview/BookPreviewContainer'
-import PropTypes from 'prop-types'
+import React from "react";
+import BookPreviewContainer from "../BookPreview/BookPreviewContainer";
+import PropTypes from "prop-types";
 
-const BookPreviewPage = ({book}) => {
+const BookPreviewPage = ({ book }) => {
   return (
     <>
-      <BookPreviewContainer book={book}/> 
+      <BookPreviewContainer book={book} />
     </>
   );
-}
+};
 
 BookPreviewPage.propTypes = {
-  book: PropTypes.object.isRequired
-}
+  book: PropTypes.object.isRequired,
+};
 
-export default BookPreviewPage
-
+export default BookPreviewPage;
