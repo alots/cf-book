@@ -10,7 +10,7 @@ const BookName = ({title}) => {
 }
 
 BookName.propTypes = {
-  tittle: PropTypes.string
+  title: PropTypes.string
 };
 
 export default BookName

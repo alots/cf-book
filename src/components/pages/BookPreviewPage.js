@@ -1,8 +1,6 @@
 import React from 'react';
 import BookPreviewContainer from '../BookPreview/BookPreviewContainer'
-import books from '~/src/books.json'
-
-
+import PropTypes from 'prop-types'
 
 const BookPreviewPage = ({book}) => {
   return (
@@ -10,6 +8,10 @@ const BookPreviewPage = ({book}) => {
       <BookPreviewContainer book={book}/> 
     </>
   );
+}
+
+BookPreviewPage.propTypes = {
+  book: PropTypes.object.isRequired
 }
 
 export default BookPreviewPage
