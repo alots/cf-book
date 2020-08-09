@@ -2,10 +2,15 @@ import React from 'react'
 import PropTypes from 'prop-types';
 import {Card} from 'reactstrap'
 
-const SimilarBookCard = ({book, changeSimilarBooks}) => {
+const SimilarBookCard = React.memo(({book, changeSimilarBooks}) => {
+  
   return (
+    
     <Card className="book-card">
-      <a className="close-btn" onClick={changeSimilarBooks}/>
+      <a className="close-btn" onClick={() => changeSimilarBooks(book.id)}/>
+      {
+      console.log("render card")
+      }
       <img className="book-card-image"  src={book.cover} alt="Card image cap"/>
       <div className="book-card-title"> {book.title} </div>
         {
@@ -16,11 +21,8 @@ const SimilarBookCard = ({book, changeSimilarBooks}) => {
       
     </Card>
   );
-}
+});
 
-SimilarBookCard.propTypes = {
-  book: PropTypes.object.isRequired,
-  changeSimilarBooks: PropTypes.func.isRequired
-}
+
 
 export default SimilarBookCard

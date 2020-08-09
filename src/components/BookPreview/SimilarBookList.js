@@ -1,5 +1,4 @@
-import React,{useState, useReducer} from 'react'
-import books from '~/src/books'
+import React,{useState, useCallback} from 'react'
 import SimilarBookCard from './SimilarBookCard'
 import settings from '~/src/config/settings'
 
@@ -8,26 +7,29 @@ const SimilarBookList = ({similarBooks}) => {
 
   const visibleBooksInit = similarBooks.slice(0, settings.visibleSimilarBooksCount);
   const hiddenBooksInit = similarBooks.slice(settings.visibleSimilarBooksCount, similarBooks.length);
-  const [hiddenBooks, setHiddenBooks] = useState(hiddenBooksInit);
-  const [visibleBooks, setVisibleBooks] = useState(visibleBooksInit);
+  const [state, setState] = useState({
+    visibleBooks: visibleBooksInit,
+    hiddenBooks: hiddenBooksInit
+  });
   
- 
-  const changeSimilarBooks = (currentId) => {
-    let newVisibleBooks = visibleBooks.filter(book => book.id != currentId); 
-    if (hiddenBooks.length > 0)
-    {
-      let newHiddenBooks = [...hiddenBooks]
-        newVisibleBooks.push(newHiddenBooks.pop())
-        setHiddenBooks(newHiddenBooks)
-    }
-    setVisibleBooks(newVisibleBooks);  
-  }
+  const changeSimilarBooks = useCallback((currentId) => {
+    setState((prevState) => {
+      let newState = {};
+      newState.visibleBooks = prevState.visibleBooks.filter(book => book.id != currentId);
+
+      if (prevState.hiddenBooks.length > 0)
+        {
+            newState.hiddenBooks = [...prevState.hiddenBooks]
+            newState.visibleBooks.push(newState.hiddenBooks.pop())
+        }
+      return newState
+      })
+  },[]);
 
   return (   
-    visibleBooks.map((book) => (
-    <div key={book.id}>
-      <SimilarBookCard  book={book} changeSimilarBooks={() => changeSimilarBooks(book.id)}/>
-    </div>
+    state.visibleBooks.map((book) => (
+      <SimilarBookCard key={book.id}  book={book} changeSimilarBooks={changeSimilarBooks}/>
+
     )));
 }  
 
