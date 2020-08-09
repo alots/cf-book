@@ -1,4 +1,5 @@
 import React,{useState} from 'react'
+import PropTypes from 'prop-types'
 
 const AuthorEarns = ({suggestedPrice, minPrice}) => {
   const [userPay, setUserPay] = useState((suggestedPrice).toFixed(2))
@@ -15,15 +16,7 @@ const AuthorEarns = ({suggestedPrice, minPrice}) => {
       setAuthorEarns(newAuthorEarns);
       setUserPay(newPay);
   }
-  const ChanceEarns = (e) => {
-    const newAuthorEarns = e.target.value;
-    const newPay = (newAuthorEarns + comission(newAuthorEarns)).toFixed(2);
-    setUserPay(newPay);
-    setAuthorEarns(newAuthorEarns);
-  }
 
-  console.log(userPay);
-  console.log(authorEarns);
   return(
     <div className="author-earns">
         <label> YOU PAY</label>
@@ -50,14 +43,21 @@ const AuthorEarns = ({suggestedPrice, minPrice}) => {
           />
         <label className="price-lb"> ${authorEarns} </label>
         </div>
-        <input 
-          name="user-price"
-          value={userPay}  
-          onChange={changePrice} 
-        ></input>
         <label className="price-lb">YOU PAY (us$)</label>
-    </div>       
+        <div>
+          <input 
+              name="user-price"
+              value={userPay}  
+              onChange={changePrice} 
+            ></input>   
+        </div>  
+    </div>                   
   );
 }
+
+AuthorEarns.propTypes = {
+  suggestedPrice: PropTypes.number.isRequired,
+  minPrice: PropTypes.number.isRequired
+};
 
 export default AuthorEarns
