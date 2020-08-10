@@ -9,7 +9,7 @@
   background-color: bisque;
   
 }
-.book-info {
+.book-cover {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,4 +27,28 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+
+
+.book-card {
+  max-width: 200px;
+  max-height: 500px;
+  margin-left: 50px;
+  
+}
+.book-card.card{
+  background-color: rgba(41, 39, 39, 1);
+  border: none;
+}
+.book-card-image {
+  max-width: 200px;
+  max-height: 300px;
+  border-radius: 5px;
+}
+.book-card-title{
+  color:  #fff;
+  font-weight: bold;
+}
+.book-card-authors{
+  color:  rgba(217,215,215,1);
 }
