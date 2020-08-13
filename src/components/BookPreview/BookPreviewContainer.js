@@ -10,6 +10,8 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import routes from "~/src/config/routes";
 import SimilarBookList from "./SimilarBookList";
+import PriceForm from './PriceForm'
+
 
 const BookPreviewContainer = ({ book }) => {
   const [countSubscribers, setCountSubscribers] = useState(0);
@@ -34,6 +36,10 @@ const BookPreviewContainer = ({ book }) => {
             minPrice={book.minPrice}
             suggestedPrice={book.suggestedPrice}
           />
+          <PriceForm
+            suggestedPrice={book.suggestedPrice}
+            minPrice={book.minPrice}
+          />
           <AddBook handleClick={handleClick} />
           {countSubscribers > settings.popularBookSubscribersCount ? (
             <div className="subscribers">
@@ -47,7 +53,9 @@ const BookPreviewContainer = ({ book }) => {
         <Col className="book-about">
           <div className="book-about-title">About the book:</div>
           <div className="book-about-text">
-            <BookDescription description={book.description} />
+            <BookDescription 
+              description={book.description} 
+            />
           </div>
           <Link to={routes.userQuestion()}>
             <div>
