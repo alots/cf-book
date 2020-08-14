@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import PropTypes from 'prop-types'
 import {calcAuthorEarns} from '~/src/services/book-price-calculator'
 import {formatMoney} from '~/src/utils/money-utils'
@@ -9,11 +9,9 @@ const PriceForm = ({suggestedPrice, minPrice}) => {
   const [userPay, setUserPay] = useState(suggestedPrice);
   const [authorEarns,setAuthorEarns] = useState(calcAuthorEarns(suggestedPrice));
   
+  
   const changePrice = (e) => {
-      let newPay = parseFloat(e.target.value || 0);
-      if (newPay < minPrice) {
-        newPay = minPrice
-      }
+      const newPay = Math.max(minPrice, parseFloat(e.target.value || 0));
       const newAuthorEarns = calcAuthorEarns(newPay);
       setAuthorEarns(newAuthorEarns);
       setUserPay(newPay);  

@@ -1,17 +1,28 @@
-import React from "react";
+import React,{useEffect,useState} from "react";
 import BookPreviewContainer from "../BookPreview/BookPreviewContainer";
-import PropTypes from "prop-types";
 
-const BookPreviewPage = ({ book }) => {
+const superagent = require('superagent');
+
+const BookPreviewPage = () => {
+  const [records, setRecords] = useState(null);
+  useEffect(() => {
+    superagent
+      .get('https://run.mocky.io/v3/e08716ee-87d0-4ae1-a6b3-9d57d1e580c0')
+      .then(res => {
+        let newRecords = res.body[0];
+        setRecords(newRecords);
+      })
+  },[]);
+   
   return (
     <>
-      <BookPreviewContainer book={book} />
+    {
+      records ?
+      <BookPreviewContainer book={records} />
+      : <div style={ {"color": "white"}}> Loading... </div>
+    }
     </>
   );
-};
-
-BookPreviewPage.propTypes = {
-  book: PropTypes.object.isRequired,
 };
 
 export default BookPreviewPage;
