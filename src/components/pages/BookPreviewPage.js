@@ -1,26 +1,20 @@
-import React,{useEffect,useState} from "react";
+import React, { useEffect, useState } from "react";
 import BookPreviewContainer from "../BookPreview/BookPreviewContainer";
-
-const superagent = require('superagent');
+import { fetchBook } from "../../actions/books";
 
 const BookPreviewPage = () => {
-  const [records, setRecords] = useState(null);
+  const [book, setBook] = useState(null);
   useEffect(() => {
-    superagent
-      .get('https://run.mocky.io/v3/e08716ee-87d0-4ae1-a6b3-9d57d1e580c0')
-      .then(res => {
-        let newRecords = res.body[0];
-        setRecords(newRecords);
-      })
-  },[]);
-   
+    fetchBook("rec020gkM82TfQDyX").then((book) => setBook(book));
+  }, []);
+
   return (
     <>
-    {
-      records ?
-      <BookPreviewContainer book={records} />
-      : <div style={ {"color": "white"}}> Loading... </div>
-    }
+      {book ? (
+        <BookPreviewContainer book={book} />
+      ) : (
+        <div style={{ color: "white" }}> Loading... </div>
+      )}
     </>
   );
 };

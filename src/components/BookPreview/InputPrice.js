@@ -1,32 +1,31 @@
-import React,{ useState, useEffect, useRef} from 'react';
-import PropTypes from 'prop-types';
+import React, { useState, useEffect, useRef } from "react";
+import PropTypes from "prop-types";
 
-const InputPrice = ({userPay, changePrice}) => {
-  const [ price, setPrice ] = useState(userPay);
+const InputPrice = ({ userPay, changePrice }) => {
+  const [price, setPrice] = useState(userPay);
   useEffect(() => {
-    setPrice(userPay)
-  },[userPay]);
+    setPrice(userPay);
+  }, [userPay]);
 
   const inputPrice = useRef(null);
 
   useEffect(() => {
     inputPrice.current.focus();
-  },[]);
-  return(
+  }, []);
+  return (
     <input
       ref={inputPrice}
       name="user-price"
       value={price}
-      onChange={e => setPrice(e.target.value)}
+      onChange={(e) => setPrice(e.target.value)}
       onBlur={changePrice}
     ></input>
   );
-}
-
+};
 
 InputPrice.propTypes = {
   userPay: PropTypes.number.isRequired,
-  changePrice: PropTypes.func.isRequired
+  changePrice: PropTypes.func.isRequired,
 };
 
-export default InputPrice
+export default InputPrice;
