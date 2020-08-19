@@ -1,17 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import BookPreviewContainer from "../BookPreview/BookPreviewContainer";
-import PropTypes from "prop-types";
+import { fetchBook } from "../../actions/books";
 
-const BookPreviewPage = ({ book }) => {
+const BookPreviewPage = () => {
+  const [book, setBook] = useState(null);
+  useEffect(() => {
+    fetchBook("rec020gkM82TfQDyX").then((book) => setBook(book));
+  }, []);
+
   return (
     <>
-      <BookPreviewContainer book={book} />
+      {book ? (
+        <BookPreviewContainer book={book} />
+      ) : (
+        <div style={{ color: "white" }}> Loading... </div>
+      )}
     </>
   );
-};
-
-BookPreviewPage.propTypes = {
-  book: PropTypes.object.isRequired,
 };
 
 export default BookPreviewPage;

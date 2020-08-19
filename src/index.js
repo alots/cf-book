@@ -2,7 +2,6 @@ import ReactDOM from "react-dom";
 import React from "react";
 import "./assets/application.css";
 import "bootstrap/dist/css/bootstrap.css";
-import books from "./books.json";
 import AuthContext from "./components/UserPreview/AuthContext";
 import AppLayout from "./components/layouts/AppLayout";
 import { Switch, Redirect, Route, Router } from "react-router-dom";
@@ -27,7 +26,7 @@ ReactDOM.render(
       <AppLayout>
         <Switch>
           <Route path={routes.bookPreview()}>
-            <BookPreviewPage book={books[0]} />
+            <BookPreviewPage />
           </Route>
           <Route path={routes.userQuestion()}>
             <UserQuestionPage />
