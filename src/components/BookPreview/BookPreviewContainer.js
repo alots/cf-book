@@ -11,8 +11,12 @@ import { Link } from "react-router-dom";
 import routes from "~/src/config/routes";
 import SimilarBookList from "./SimilarBookList";
 import PriceForm from "./PriceForm";
+/* import withLoader from "../../HOC/withLoader" */
+import withBookInformation from "../../HOC/withBookInformation"
 
-const BookPreviewContainer = ({ book }) => {
+
+
+const BookPreviewContainer = ({book}) => {
   const [countSubscribers, setCountSubscribers] = useState(0);
   const handleClick = () => {
     setCountSubscribers(countSubscribers + 1);
@@ -73,4 +77,4 @@ BookPreviewContainer.propTypes = {
   book: PropTypes.object.isRequired,
 };
 
-export default BookPreviewContainer;
+export default withBookInformation(BookPreviewContainer)

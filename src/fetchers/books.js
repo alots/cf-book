@@ -34,7 +34,7 @@ const bookAdapter = {
 
 export const fetchBook = async (id) => {
   const bookResponse = await superagent.get(api.book(id));
-  console.log;
+  
   const authorIds = bookResponse.body.fields.authors;
   const authorRequests = authorIds.map((id) => superagent.get(api.author(id)));
 
@@ -56,9 +56,6 @@ export const fetchBook = async (id) => {
     return bookAdapter.transformSimilarBook(resp.body.fields);
   });
 
-  /* console.log(book)
-  console.log(authors)
-  console.log(similarBooks) */
 
   return {
     ...book,

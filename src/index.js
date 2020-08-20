@@ -2,7 +2,6 @@ import ReactDOM from "react-dom";
 import React from "react";
 import "./assets/application.css";
 import "bootstrap/dist/css/bootstrap.css";
-import AuthContext from "./components/UserPreview/AuthContext";
 import AppLayout from "./components/layouts/AppLayout";
 import { Switch, Redirect, Route, Router } from "react-router-dom";
 import { createBrowserHistory } from "history";
@@ -10,6 +9,7 @@ import routes from "./config/routes";
 
 import BookPreviewPage from "./components/pages/BookPreviewPage";
 import UserQuestionPage from "./components/pages/UserQuestionPage";
+import AuthContext from "./components/UserPreview/AuthContext";
 
 const history = createBrowserHistory();
 const user = {
@@ -19,6 +19,7 @@ const user = {
   avatarUrl:
     "https://www.meme-arsenal.com/memes/80eb30251580a0277a3bd0a987a75008.jpg",
 };
+export const UserContext = React.createContext(user);
 
 ReactDOM.render(
   <Router history={history}>
@@ -36,7 +37,7 @@ ReactDOM.render(
           </Route>
         </Switch>
       </AppLayout>
-    </AuthContext.Provider>
+    </AuthContext.Provider >
   </Router>,
   document.getElementById("root")
 );
