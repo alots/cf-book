@@ -16,7 +16,7 @@ import withBookInformation from "../../HOC/withBookInformation"
 
 
 
-const BookPreviewContainer = ({book}) => {
+const BookPreviewContainer = ({isLoading, book}) => {
   const [countSubscribers, setCountSubscribers] = useState(0);
   const handleClick = () => {
     setCountSubscribers(countSubscribers + 1);

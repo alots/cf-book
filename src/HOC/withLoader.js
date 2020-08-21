@@ -1,4 +1,4 @@
-/* import React from 'react'
+import React from 'react'
 
 const withLoader = EnhancedComponent => (
   function withLoader(props) {
@@ -12,4 +12,4 @@ const withLoader = EnhancedComponent => (
   
 );
 
-export default withLoader */
+export default withLoader

@@ -1,5 +1,6 @@
 import React,{useState, useEffect} from 'react'
 import {fetchBook} from '../fetchers/books'
+import withLoader from '../HOC/withLoader'
 
 const withBookInformation = EnhancedComponent => (
   function withBookInformation() {
@@ -8,11 +9,9 @@ const withBookInformation = EnhancedComponent => (
     useEffect(() => {
       fetchBook("rec020gkM82TfQDyX").then((result) => setBook(result));
     }, []);
-    const isLoading = !book; 
+    const EnhancedComponentWittLoader = withLoader(EnhancedComponent);
       return(
-        isLoading
-        ? <div style={{color: "white"}}> Loading... </div>
-        : <EnhancedComponent book={book} />
+        <EnhancedComponentWittLoader isLoading={!book} book={book} />
       );
   }
 );
