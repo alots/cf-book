@@ -1,0 +1,15 @@
+.btn-up {
+  position: fixed;
+  top: 50px;
+  left: 50px;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  max-width: 50px;
+  max-height: 50px;
+}
+.hidden {
+  display: none;
+}

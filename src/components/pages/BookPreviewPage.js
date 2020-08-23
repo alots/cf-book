@@ -4,7 +4,6 @@ import BookPreviewContainer from "../BookPreview/BookPreviewContainer";
 /* import useFetchBook from "../../hooks/useFetchBook"
  */
 
-
 const BookPreviewPage = () => {
   /* const [book, setBook] = useState(null);
   
@@ -13,7 +12,7 @@ const BookPreviewPage = () => {
   }, []); */
   /* const book = useFetchBook(); */
 
-  return <BookPreviewContainer />       
-}
+  return <BookPreviewContainer />;
+};
 
-export default BookPreviewPage
+export default BookPreviewPage;

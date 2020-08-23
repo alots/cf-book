@@ -37,7 +37,7 @@ ReactDOM.render(
           </Route>
         </Switch>
       </AppLayout>
-    </AuthContext.Provider >
+    </AuthContext.Provider>
   </Router>,
   document.getElementById("root")
 );
