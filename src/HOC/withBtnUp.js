@@ -7,20 +7,21 @@ const withBtnUp = (EnhancedComponent, visibleFrom) =>
       const currentY = window.scrollY;
       let scroll = currentY > visibleFrom;
       setVisible(scroll);
+      
     };
 
     useEffect(() => {
       window.addEventListener("scroll", handleScroll);
       return () => window.removeEventListener("scroll", handleScroll);
     }, []);
+    const btnClasses = visible ? "btn-up" : "hidden";
 
     return (
       <EnhancedComponent
         {...props}
         onClick={() => window.scrollTo(0, 0)}
-        visible={visible}
-        children={"UP"}
-      />
+        btnClasses={btnClasses}
+      > UP </EnhancedComponent>
     );
   };
 

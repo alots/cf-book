@@ -13,10 +13,14 @@ import SimilarBookList from "./SimilarBookList";
 import PriceForm from "./PriceForm";
 import withLoader from "../../HOC/withLoader";
 import withBookInformation from "../../HOC/withBookInformation";
-import BtnUp from "./BtnUp";
+import Btn from "../ui/Btn"
+import withBtnUp from "../../HOC/withBtnUp";
+
+const BtnUp = withBtnUp(Btn,settings.visibleFrom);
 
 const BookPreviewContainer = ({ book }) => {
   const [countSubscribers, setCountSubscribers] = useState(0);
+  
 
   const handleClick = () => {
     setCountSubscribers(countSubscribers + 1);

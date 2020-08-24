@@ -1,10 +1,10 @@
 import React from "react";
-import withBtnUp from "../../HOC/withBtnUp";
 import PropTypes from "prop-types";
 import { Button } from "reactstrap";
 
-const BtnUp = ({ onClick, visible, children }) => {
-  const btnClasses = visible ? "btn-up" : "hidden";
+
+const Btn = ({ onClick, children, btnClasses }) => {
+  
   return (
     <Button outline color="secondary" className={btnClasses} onClick={onClick}>
       {children}
@@ -12,10 +12,10 @@ const BtnUp = ({ onClick, visible, children }) => {
   );
 };
 
-BtnUp.propTypes = {
+Btn.propTypes = {
   onClick: PropTypes.func.isRequired,
-  visible: PropTypes.bool.isRequired,
+  btnClasses: PropTypes.string.isRequired,
   children: PropTypes.string,
 };
 
-export default withBtnUp(BtnUp, 300);
+export default Btn;
