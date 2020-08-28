@@ -1,22 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import BookPreviewContainer from "../BookPreview/BookPreviewContainer";
-import { fetchBook } from "../../actions/books";
+/* import {fetchBook} from "~/src/fetchers/books.js"; */
+/* import useFetchBook from "../../hooks/useFetchBook"
+ */
 
 const BookPreviewPage = () => {
-  const [book, setBook] = useState(null);
+  /* const [book, setBook] = useState(null);
+  
   useEffect(() => {
-    fetchBook("rec020gkM82TfQDyX").then((book) => setBook(book));
-  }, []);
+    fetchBook("rec020gkM82TfQDyX").then(result => setBook(result));
+  }, []); */
+  /* const book = useFetchBook(); */
 
-  return (
-    <>
-      {book ? (
-        <BookPreviewContainer book={book} />
-      ) : (
-        <div style={{ color: "white" }}> Loading... </div>
-      )}
-    </>
-  );
+  return <BookPreviewContainer />;
 };
 
 export default BookPreviewPage;

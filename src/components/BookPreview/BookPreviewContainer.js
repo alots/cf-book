@@ -11,12 +11,21 @@ import { Link } from "react-router-dom";
 import routes from "~/src/config/routes";
 import SimilarBookList from "./SimilarBookList";
 import PriceForm from "./PriceForm";
+import withLoader from "../../HOC/withLoader";
+import withBookInformation from "../../HOC/withBookInformation";
+import Btn from "../ui/Btn"
+import withBtnUp from "../../HOC/withBtnUp";
+
+const BtnUp = withBtnUp(Btn,settings.visibleFrom);
 
 const BookPreviewContainer = ({ book }) => {
   const [countSubscribers, setCountSubscribers] = useState(0);
+  
+
   const handleClick = () => {
     setCountSubscribers(countSubscribers + 1);
   };
+
   return (
     <Container>
       <Row className="row-1">
@@ -65,6 +74,7 @@ const BookPreviewContainer = ({ book }) => {
       <Row className="similar">
         <SimilarBookList similarBooks={book.similarBooks} />
       </Row>
+      <BtnUp />
     </Container>
   );
 };
@@ -73,4 +83,4 @@ BookPreviewContainer.propTypes = {
   book: PropTypes.object.isRequired,
 };
 
-export default BookPreviewContainer;
+export default withBookInformation(withLoader(BookPreviewContainer));

@@ -6,15 +6,12 @@ import InputPrice from "./InputPrice";
 
 const PriceForm = ({ suggestedPrice, minPrice }) => {
   const [userPay, setUserPay] = useState(suggestedPrice);
-  const [authorEarns, setAuthorEarns] = useState(
-    calcAuthorEarns(suggestedPrice)
-  );
+  let authorEarns = calcAuthorEarns(userPay);
 
   const changePrice = (e) => {
     const newPay = Math.max(minPrice, parseFloat(e.target.value || 0));
-    const newAuthorEarns = calcAuthorEarns(newPay);
-    setAuthorEarns(newAuthorEarns);
     setUserPay(newPay);
+    authorEarns = calcAuthorEarns(newPay);
   };
 
   const minAuthorEarns = calcAuthorEarns(minPrice);
