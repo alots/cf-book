@@ -1,6 +1,6 @@
 import ReactDOM from "react-dom";
 import React from "react";
-import "./assets/application.css";
+import "./assets/application.scss";
 import "bootstrap/dist/css/bootstrap.css";
 import AppLayout from "./components/layouts/AppLayout";
 import { Switch, Redirect, Route, Router } from "react-router-dom";

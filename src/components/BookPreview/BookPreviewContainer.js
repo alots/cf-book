@@ -29,17 +29,17 @@ const BookPreviewContainer = ({ book }) => {
   return (
     <Container>
       <Row className="row-1">
-        <Col className="author-card">
+        <Col sm="12" md="4" className="author-card">
           <AuthorСard
             authors={book.authors}
             title={book.title}
             shortDescription={book.shortDescription}
           />
         </Col>
-        <Col className="book-cover">
+        <Col sm="12" md="4" className="book-cover">
           <BookCover book={book} />
         </Col>
-        <Col className="book-price">
+        <Col sm="12" md="4" className="book-price">
           <BookPrice
             minPrice={book.minPrice}
             suggestedPrice={book.suggestedPrice}
