@@ -3,10 +3,10 @@ import PropTypes from "prop-types";
 
 const AuthorAvatar = ({ visibleAuthors }) => {
   return (
-    <div className="author-avatar-list">
+    <div className="author-avatar__list">
       {visibleAuthors.map((author) => (
-        <div className="author-avatar" key={author.id}>
-          <img className="author-avatar" src={author.avatar} />
+        <div key={author.id}>
+          <img className="author-avatar__img" src={author.avatar} />
         </div>
       ))}
     </div>

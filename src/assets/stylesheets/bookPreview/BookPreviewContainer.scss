@@ -1,0 +1,44 @@
+.row-1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  .book-cover {
+    display: flex;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+  
+    .book-cover__img {
+      display: flex;
+      max-width: 350px;
+    }
+  }
+
+
+  .subscribers {
+    color: white;
+  }
+  
+}
+
+.book-about{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: bisque;
+  
+  .book-about__title {
+    color: black;
+    opacity: .7;
+  }
+}
+
+
+
+
+/* .book-card-authors{
+  color:  rgba(217,215,215,1);
+} */
+

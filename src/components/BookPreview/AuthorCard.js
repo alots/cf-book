@@ -19,10 +19,10 @@ const AuthorСard = ({ authors, title, shortDescription }) => {
   const showExpandButton = authors.length > settings.visibleAuthorsCount;
   return (
     <div className="author-card">
-      <div className="author-card-title">
+      <div className="author-card__title">
         <BookName title={title} />
       </div>
-      <div className="author-title-info">
+      <div className="author-card__info">
         <AuthorAvatar visibleAuthors={visibleAuthors} />
         <AuthorName visibleAuthors={visibleAuthors} />
         {showExpandButton && (

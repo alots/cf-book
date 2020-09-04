@@ -1,0 +1,33 @@
+.author-card {
+
+  .author-card__title {
+    font-size: 32px;
+    font-family: serif;
+    color: rgba(217,215,215,1)
+    
+  }
+
+  .author-card__info {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    color: rgba(217,215,215,1)
+  }
+
+  .author-information {
+    opacity: .7;
+    color: rgba(217,215,215,1);
+  }
+}
+
+.author-card.col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-self: space-around;
+  max-width: 500px;
+}
+
+
+
+

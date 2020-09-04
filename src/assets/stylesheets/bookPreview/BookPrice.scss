@@ -1,0 +1,26 @@
+.book-price {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: rgba(217,215,215,1);
+
+  .price-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .price {
+    margin-left: 10px;
+  }
+
+  .author-earns {
+
+    .slidecontainer {
+
+      .price-lb {
+        color: white;
+        margin-left: 20px;
+      }
+    } 
+  }
+}

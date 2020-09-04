@@ -59,8 +59,8 @@ const BookPreviewContainer = ({ book }) => {
       </Row>
       <Row>
         <Col className="book-about">
-          <div className="book-about-title">About the book:</div>
-          <div className="book-about-text">
+          <div className="book-about__title">About the book:</div>
+          <div className="">
             <BookDescription description={book.description} />
           </div>
           <Link to={routes.userQuestion()}>

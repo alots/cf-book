@@ -20,8 +20,9 @@ const UserQuestionPage = () => {
     event.preventDefault();
   };
   return (
-    <Form className="question-form" onSubmit={handleSubmit}>
-      <FormGroup>
+    <Form className="container" onSubmit={handleSubmit}>
+      <div className="question-form__container">
+      <FormGroup >
         <Label className="form-text">User Name</Label>
         <Input
           type="text"
@@ -48,6 +49,7 @@ const UserQuestionPage = () => {
       <Button type="submit" value="Отправить">
         Submit
       </Button>
+      </div>
     </Form>
   );
 };
