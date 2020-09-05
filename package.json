@@ -10,6 +10,11 @@
     "test:eslint": "eslint src/ --ext .js --ext .jsx",
     "prettier": "prettier --write \"src/**/*.js\""
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
     "*.{js,jsx,json,scss,css,md}": [
       "prettier --write",

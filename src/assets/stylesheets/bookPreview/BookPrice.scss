@@ -2,7 +2,12 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  color: rgba(217,215,215,1);
+  color: $color_contentText;
+  padding-top: 30px;
+
+  .btn-subscribe {
+    padding-top: 20px;
+  }
 
   .price-container {
     display: flex;
@@ -14,13 +19,11 @@
   }
 
   .author-earns {
-
     .slidecontainer {
-
       .price-lb {
-        color: white;
+        color: $color_contentText;
         margin-left: 20px;
       }
-    } 
+    }
   }
 }

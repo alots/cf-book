@@ -1,14 +1,14 @@
-.user-avatar {
-  width: 50px;
- 
-}
-.user-name {
-  color: white;
-}
 .user-info {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
-  max-height: 100px;;
+  max-height: 100px;
+
+  .user-avatar {
+    width: 50px;
+  }
+  .user-name {
+    color: $color_contentText;
+  }
 }

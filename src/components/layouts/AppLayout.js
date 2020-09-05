@@ -4,12 +4,12 @@ import PropTypes from "prop-types";
 
 const AppLayout = ({ children }) => {
   return (
-    <div className="App">
+    <div className="app">
       <HeaderMain />
 
-      {children}
+      <div className="app-container">{children}</div>
 
-      <footer className="footer">
+      <footer className="app-footer">
         &copy; {new Date().getFullYear()}, Thinknetica
       </footer>
     </div>

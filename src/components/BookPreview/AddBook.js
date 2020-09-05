@@ -15,7 +15,7 @@ const AddBook = ({ handleClick }) => {
   };
 
   return (
-    <div>
+    <div className="btn-subscribe">
       <Button color="danger" onClick={toggle}>
         {" "}
         Подписаться{" "}
