@@ -13,14 +13,13 @@ import SimilarBookList from "./SimilarBookList";
 import PriceForm from "./PriceForm";
 import withLoader from "../../HOC/withLoader";
 import withBookInformation from "../../HOC/withBookInformation";
-import Btn from "../ui/Btn"
+import Btn from "../ui/Btn";
 import withBtnUp from "../../HOC/withBtnUp";
 
-const BtnUp = withBtnUp(Btn,settings.visibleFrom);
+const BtnUp = withBtnUp(Btn, settings.visibleFrom);
 
 const BookPreviewContainer = ({ book }) => {
   const [countSubscribers, setCountSubscribers] = useState(0);
-  
 
   const handleClick = () => {
     setCountSubscribers(countSubscribers + 1);
@@ -28,7 +27,7 @@ const BookPreviewContainer = ({ book }) => {
 
   return (
     <Container>
-      <Row className="row-1">
+      <Row className="bookPreview-row">
         <Col sm="12" md="4" className="author-card">
           <AuthorСard
             authors={book.authors}
@@ -59,8 +58,8 @@ const BookPreviewContainer = ({ book }) => {
       </Row>
       <Row>
         <Col className="book-about">
-          <div className="book-about-title">About the book:</div>
-          <div className="book-about-text">
+          <div className="book-about__title">About the book:</div>
+          <div className="">
             <BookDescription description={book.description} />
           </div>
           <Link to={routes.userQuestion()}>

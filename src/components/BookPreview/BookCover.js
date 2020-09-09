@@ -5,7 +5,7 @@ import BookProgress from "./BookProgress";
 const BookCover = ({ book }) => {
   return (
     <div className="book-cover">
-      <img className="book-cover-image" src={book.cover} />
+      <img className="book-cover__img" src={book.cover} />
       <BookProgress progressInPercent={book.progressInPercent} />
     </div>
   );

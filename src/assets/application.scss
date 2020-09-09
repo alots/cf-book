@@ -1,12 +1,13 @@
-@import './general.scss';
-@import './stylesheets/AuthorAvatar.scss';
-@import './stylesheets/AuthorCard.scss';
-@import './stylesheets/BookCard.scss';
-@import './stylesheets/BookPrice.scss';
-@import './stylesheets/Header.scss';
-@import './stylesheets/Footer.scss';
-@import './stylesheets/UserQuestion.scss';
-@import './stylesheets/UserInfo.scss';
-@import './stylesheets/BtnClose.scss';
-@import './stylesheets/BtnUp.scss';
-
+@import "./variables.scss";
+@import "./general.scss";
+@import "./stylesheets/bookPreview/AuthorAvatar.scss";
+@import "./stylesheets/bookPreview/AuthorCard.scss";
+@import "./stylesheets/layout/UserQuestionPage.scss";
+@import "./stylesheets/userPreview/UserInfo.scss";
+@import "./stylesheets/bookPreview/AuthorName.scss";
+@import "./stylesheets/bookPreview/BookPreviewContainer.scss";
+@import "./stylesheets/bookPreview/BtnUp.scss";
+@import "./stylesheets/bookPreview/BtnClose.scss";
+@import "./stylesheets/bookPreview/SimilarBook.scss";
+@import "./stylesheets/bookPreview/BookPrice.scss";
+@import "./stylesheets/layout/AppLayuot.scss";

@@ -1,0 +1,9 @@
+.author-name__list {
+  display: flex;
+  flex-direction: row;
+
+  .author-name {
+    color: $color_contentText;
+    margin-right: 4px;
+  }
+}

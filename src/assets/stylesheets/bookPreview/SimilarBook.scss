@@ -1,0 +1,23 @@
+.similar {
+  .book-card {
+    max-width: 200px;
+    max-height: 500px;
+    margin-left: 50px;
+  }
+
+  .book-card__image {
+    max-width: 200px;
+    max-height: 300px;
+    border-radius: 5px;
+  }
+  .book-card__title {
+    color: $color_contentText;
+    font-weight: bold;
+  }
+
+  .book-card.card {
+    background-color: $color_background;
+    border: none;
+    margin-top: 10px;
+  }
+}

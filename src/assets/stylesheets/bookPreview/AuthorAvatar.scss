@@ -1,0 +1,9 @@
+.author-avatar__list {
+  display: flex;
+  flex-direction: row;
+
+  .author-avatar__img {
+    width: 50px;
+    border-radius: 50%;
+  }
+}

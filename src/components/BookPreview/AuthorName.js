@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const AuthorName = ({ visibleAuthors }) => {
   const delimiter = ", ";
   return (
-    <div className="author-name-list">
+    <div className="author-name__list">
       {visibleAuthors.map((author, idx) => (
         <div className="author-name" key={author.id}>
           {author.name}

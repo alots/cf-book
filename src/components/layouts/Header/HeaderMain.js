@@ -6,7 +6,7 @@ import routes from "~/src/config/routes";
 
 const HeaderMain = () => {
   return (
-    <div className="header-main">
+    <div className="app-header">
       <HeaderMainLogo />
       <Link to={routes.bookPreview()}> Просмотр книги </Link>
       <Link to={routes.userQuestion()}> Обратная связь </Link>
