@@ -33,6 +33,8 @@
   }
 }
 .app-container {
+  display: flex;
+  justify-content: center;
   grid-area: container;
   width: 100%;
   background-color: $color_background;

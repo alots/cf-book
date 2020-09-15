@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchBook } from "../fetchers/books";
+import { fetchBook } from "../fetchers/book";
 
 const useFetchBook = () => {
   const [book, setBook] = useState(null);

@@ -8,8 +8,9 @@ const HeaderMain = () => {
   return (
     <div className="app-header">
       <HeaderMainLogo />
-      <Link to={routes.bookPreview()}> Просмотр книги </Link>
-      <Link to={routes.userQuestion()}> Обратная связь </Link>
+      <Link to={routes.booksList}>Каталог книг</Link>
+      {/* <Link to={routes.bookPreview()}> Просмотр книги </Link> */}
+      <Link to={routes.userQuestion}> Обратная связь </Link>
       <UserInfo />
     </div>
   );
