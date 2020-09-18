@@ -8,13 +8,14 @@ import BookDescription from "./BookDescription";
 import settings from "~/src/config/settings.js";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import routes from "~/src/config/routes";
+import { routes } from "~/src/config/routes";
 import SimilarBookList from "./SimilarBookList";
 import PriceForm from "./PriceForm";
 import withLoader from "../../HOC/withLoader";
 import withBookInformation from "../../HOC/withBookInformation";
 import Btn from "../ui/Btn";
 import withBtnUp from "../../HOC/withBtnUp";
+import { Helmet } from "react-helmet";
 
 const BtnUp = withBtnUp(Btn, settings.visibleFrom);
 
@@ -27,6 +28,12 @@ const BookPreviewContainer = ({ book }) => {
 
   return (
     <Container>
+      <Helmet>
+        <title>
+          {" "}
+          {book ? `BooksApp - ${book.title}` : `BooksApp - Loading...`}{" "}
+        </title>
+      </Helmet>
       <Row className="bookPreview-row">
         <Col sm="12" md="4" className="author-card">
           <AuthorСard
@@ -62,7 +69,7 @@ const BookPreviewContainer = ({ book }) => {
           <div className="">
             <BookDescription description={book.description} />
           </div>
-          <Link to={routes.userQuestion()}>
+          <Link to={routes.userQuestion}>
             <div>
               <label>Обратная связь: </label>
               <Button color="link">Задать вопрос</Button>

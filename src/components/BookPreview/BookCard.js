@@ -6,7 +6,6 @@ const BookCard = ({ book }) => {
     <div className="book-card">
       <img className="book-card__img" src={book.cover} />
       <label className="book-card__name"> {book.title} </label>
-      <label className="book-card__name"> {book.id} </label>
     </div>
   );
 };
