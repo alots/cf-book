@@ -1,17 +1,12 @@
 import React from "react";
-import PropTypes from "prop-types";
 
-const BookCard = ({ book }) => {
+const BookCard = ({ cover, title }) => {
   return (
     <div className="book-card">
-      <img className="book-card__img" src={book.cover} />
-      <label className="book-card__name"> {book.title} </label>
+      <img className="book-card__img" src={cover} />
+      <label className="book-card__name"> {title} </label>
     </div>
   );
-};
-
-BookCard.propTypes = {
-  book: PropTypes.object.isRequired,
 };
 
 export default BookCard;

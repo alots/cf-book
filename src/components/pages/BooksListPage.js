@@ -1,4 +1,5 @@
 import React from "react";
+import { generatePath } from "react-router";
 import { Container, Row } from "reactstrap";
 import { Link } from "react-router-dom";
 import withLoader from "../../HOC/withLoader";
@@ -15,8 +16,11 @@ const BooksListPage = ({ books }) => {
       </Helmet>
       <Row className="bookList-row">
         {books.map((book) => (
-          <Link key={book.id} to={linkUrl(routes.bookPreview, { id: book.id })}>
-            <BookCard book={book} />
+          <Link
+            key={book.id}
+            to={generatePath(routes.bookPreview, { id: book.id })}
+          >
+            <BookCard cover={book.cover} title={book.title} />
           </Link>
         ))}
       </Row>

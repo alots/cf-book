@@ -9,7 +9,7 @@ const withBookInformation = (EnhancedComponent) =>
 
     useEffect(() => {
       fetchBook(id).then((result) => setBook(result));
-    }, []);
+    }, [id]);
 
     return <EnhancedComponent isLoading={!book} book={book} />;
   };
