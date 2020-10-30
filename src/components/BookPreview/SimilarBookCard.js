@@ -8,12 +8,6 @@ const SimilarBookCard = ({ book, changeSimilarBooks }) => {
       <a className="close-btn" onClick={() => changeSimilarBooks(book.id)} />
       <img className="book-card__image" src={book.cover} alt="Card image cap" />
       <div className="book-card__title"> {book.title} </div>
-      {/* {book.authors.map((author) => (
-        <a key={author.id} href="#" className="book-card-authors">
-          {" "}
-          {author.name}{" "}
-        </a>
-      ))} */}
     </Card>
   );
 };

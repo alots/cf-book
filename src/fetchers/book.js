@@ -2,6 +2,13 @@ import api from "../config/api";
 
 const superagent = require("superagent");
 const bookAdapter = {
+  transformAllBooks: (rawBooks) => {
+    return {
+      id: rawBooks.id,
+      cover: rawBooks.fields.cover,
+      title: rawBooks.fields.tittle,
+    };
+  },
   transformBook: (rawBook) => {
     return {
       id: rawBook.book_id,
@@ -61,4 +68,13 @@ export const fetchBook = async (id) => {
     authors,
     similarBooks,
   };
+};
+
+export const fetchAllBooks = async () => {
+  const bookResponse = await superagent.get(api.books());
+  const books = bookResponse.body.records.map((book) =>
+    bookAdapter.transformAllBooks(book)
+  );
+
+  return [...books];
 };

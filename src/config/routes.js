@@ -1,5 +1,5 @@
-const routes = {
-  bookPreview: () => "/book-preview",
-  userQuestion: () => "/user-question",
+export const routes = {
+  booksList: "/books",
+  bookPreview: "/books/:id",
+  userQuestion: "/user-question",
 };
-export default routes;
